@@ -18,6 +18,7 @@ gulp.task('styles', function(){
 });
 gulp.task('scripts', function() {
     gulp.src('assets/scripts/modules/*.js')
+        .pipe(plumber())
         .pipe(concat('assets/scripts/app.js'))
         .pipe(uglify())
         .pipe(gulp.dest(''));
