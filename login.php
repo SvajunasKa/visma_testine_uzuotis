@@ -1,10 +1,10 @@
 <?php
 
-$result = ['succsess' => false, 'msg' => 'klaida'];
+$result = ['login' => false, 'msg' => 'Klaidingas prisijungimas'];
 
-if (!empty($_POST['email']) && !empty($_POST['password'])) {
-    if ($_POST['email'] == 'admin@admin' && $_POST['password'] == '1234') {
-        $result['succsess'] = true;
+if (!empty($_POST['email'])) {
+    if ($_POST['email'] == 'admin@visma.com' && $_POST['password'] == 'admin') {
+        $result['login'] = true;
         $result['msg'] = 'Sveiki Admin!';
 
     }

@@ -1,24 +1,41 @@
-var button = document.getElementById("button");
 var forma = document.getElementById("form");
+var err = document.getElementsByClassName("err");
+var email = document.getElementById("email");
+var button = document.getElementById("button");
+var pass = document.getElementById("password");
+var inputs = document.getElementsByTagName("input");
 
-forma.addEventListener('submit', function (e) {
+forma.onsubmit= function (e) {
     e.preventDefault();
-    var formData = new FormData(form);
+    var formData = new FormData(this);
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState == request.DONE && request.status == 200) {
-            //forma.innerHTML = request.responseText;
             var res = request.responseText;
             var xxx = JSON.parse(res);
-            if(xxx['succsess'] == true){
-                console.log('teisingai')
+            if(xxx.login == true){
+                forma.innerHTML = xxx.msg;
             }else {
-                console.log('klaida')
+               err[0].innerText = xxx.msg;
             }
         }
     };
     request.open("POST", 'login.php');
     request.send(formData);
+};
+
+Object.values(inputs).forEach(function (e) {
+    e.oninput = function () {
+        if(validateEmail(email.value) && pass.value != ""){
+            button.removeAttribute("disabled")
+        }
+    }
 });
 
 
+
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}

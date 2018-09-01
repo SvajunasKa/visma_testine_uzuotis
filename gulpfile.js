@@ -20,7 +20,7 @@ gulp.task('scripts', function() {
     gulp.src('assets/scripts/modules/*.js')
         .pipe(plumber())
         .pipe(concat('assets/scripts/app.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest(''));
 });
 gulp.task('imageMin', function () {
