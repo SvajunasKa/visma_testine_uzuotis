@@ -17,7 +17,10 @@ gulp.task('styles', function(){
         .pipe(gulp.dest(''));
 });
 gulp.task('scripts', function() {
-    gulp.src('assets/scripts/modules/*.js')
+    gulp.src([
+        'assets/scripts/modules/!(app)*.js',
+        'assets/scripts/modules/app.js'
+    ])
         .pipe(plumber())
         .pipe(concat('assets/scripts/app.js'))
         //.pipe(uglify())
