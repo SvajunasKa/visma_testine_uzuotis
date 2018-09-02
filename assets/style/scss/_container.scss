@@ -1,6 +1,5 @@
 .container{
   height: 100vh;
-  position: relative;
   display: flex;
   align-items: center;
   &:before{
@@ -12,5 +11,6 @@
     height: 100vh;
     position: absolute;
     width: 100%;
+    z-index: -1;
   }
 }
