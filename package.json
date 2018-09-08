@@ -18,6 +18,8 @@
     "gulp-uglify": "^3.0.1"
   },
   "dependencies": {
-    "gulp-plumber": "^1.2.0"
+    "gulp-plumber": "^1.2.0",
+    "i": "^0.3.6",
+    "npm": "^6.4.1"
   }
 }

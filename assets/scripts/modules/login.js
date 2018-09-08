@@ -1,6 +1,7 @@
 var Login = function () {
     var form = document.getElementById("form");
     var err = document.getElementsByClassName("err");
+    var formBody = document.getElementsByClassName("form-body");
 
     var submit = function(){
         form.onsubmit = function (e) {
@@ -10,11 +11,11 @@ var Login = function () {
             request.onreadystatechange = function() {
                 if (request.readyState == request.DONE && request.status == 200) {
                     var res = request.responseText;
-                    var xxx = JSON.parse(res);
-                    if(xxx.login == true){
-                        form.innerHTML = xxx.msg;
+                    var resParsed = JSON.parse(res);
+                    if(resParsed.login == true){
+                        formBody[0].innerHTML = "<p>" + resParsed.msg + "</p>";
                     }else {
-                        err[0].innerText = xxx.msg;
+                        err[0].innerHTML = "<img src='assets/images/icons/warning.png'>" +"<p>" + resParsed.msg + "</p>";
                     }
                 }
             };

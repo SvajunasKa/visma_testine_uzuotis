@@ -1,0 +1,31 @@
+.footer{
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid $gray-border;
+  @extend .form-footer;
+  @include flex-center(unset);
+  ul{
+    padding-left: 0;
+    @include flex-center(space-between);
+  }
+  li{
+    @include list();
+    img{
+      padding-right: 5px;
+    }
+  }
+}
+@media only screen and (max-width: $break-mobile-sm) {
+  .footer{
+    height: auto;
+    ul{
+      display: block;
+    }
+    li{
+      padding-bottom: 5px;
+      &:last-of-type{
+        padding-bottom: 0;
+      }
+    }
+  }
+}

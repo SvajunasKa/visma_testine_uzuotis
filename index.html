@@ -3,25 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/style/style.min.css">
 </head>
 <body>
-<div class="container">
-    <div class="logo">
-        <img src="assets/images/image-swg/visma-logo.svg">
+<div class="base">
+        <div class="cookie">
+            <div class="icon">
+                <img src="assets/images/icons/icon-info.png">
+            </div>
+            <p>Visma saves certain data to enhance user experience. By using Visma you approve this.<a>More information</a></p>
+            <div class="link">
+                <button class="btn">Ok</button>
+            </div>
+        </div>
+        <div class="container main">
+            <div class="form">
+                <div class="form-header">
+                    <h1>
+                        TrollWeb
+                    </h1>
+                </div>
+                <div class="form-body">
+                    <form id="form" action="login.php" method="post">
+                        <div class="err"></div>
+                        <div class="row input-block">
+                            <div class="col-3">
+                                <label for="email"><span>*</span>Email</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="email" id="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row input-block">
+                            <div class="col-3">
+                                <label for="password"><span>*</span>Password</label>
+                            </div>
+                            <div class="col-9">
+                                <input type="password" id="password" name="password" placeholder="********">
+                            </div>
+                        </div>
+                        <div class="row input-block">
+                            <div class="col-9 col-offset-3">
+                                <input id="remember" type="checkbox">
+                                <label for="remember">Remember me</label>
+                            </div>
+                        </div>
+                        <div class="row input-block">
+                            <div class="col-9 col-offset-3">
+                                <button class="login" id="button" disabled>Login</button>
+                                <a class="passwReminder">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-footer">
+                    <div class="logo">
+                        <img src="assets/images/image-swg/visma-logo.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-offset-7 col-5">
+                   <ul>
+                       <li>
+                           <a>www.Visma.com</a>
+                       </li>
+                       <li>
+                           <a>Contact Us</a>
+                       </li>
+                       <li>
+                           <a>About Cookies</a>
+                       </li>
+                       <li>
+                           <img src="assets/images/icons/en.png">
+                           <a>English</a>
+                       </li>
+                   </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form">
-        <form id="form" action="login.php" method="post">
-            <div class="err"></div>
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" placeholder="Email">
-            <label for="password">password</label>
-            <input type="password" id="password" name="password" placeholder="********">
-            <button id="button" disabled >Login</button>
-        </form>
-    </div>
-
 </div>
+
 <script type="text/javascript" src="assets/scripts/app.js"></script>
 </body>
 </html>

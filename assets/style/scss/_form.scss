@@ -1,6 +1,90 @@
 .form {
-  margin: 0 auto;
-  z-index: 1;
-  padding: 50px;
+  width: 550px;
+  label{
+    @include regular-font(14px, $black);
+    vertical-align: top;
+    display: inline-block;
+    span{
+      color: $red;
+    }
+  }
+  input[type="email"], input[type="password"]{
+    width: 100%;
+    height: 30px;
+    background-color: $yellow;
+    border: 1px solid $gray-border;
+    padding-left: 10px;
+    @include regular-font(14px, $black);
+    font-style: italic;
+  }
+  input[type="checkbox"]{
+    cursor: pointer;
+  }
+  .input-block{
+    padding-bottom: 5px;
+    @include flex-center(unset)
+  }
+}
+.form-header{
+  @include flex-center(left);
+  color: $blue;
+  height: 80px;
+  background-color: rgba($white, 0.7);
+  padding: 0 30px;
+}
+.form-body{
+  padding: 30px 45px;
   background-color: white;
+  .passwReminder{
+    padding-top: 5px;
+    float: right;
+  }
+  p{
+    @include regular-font(14px, $black);
+  }
+}
+.form-footer{
+  height: 70px;
+  width: 100%;
+  background-color: $white;
+  &:before{
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right,rgba($gray, 0),$gray-border,rgba($gray, 0));
+  }
+  .logo{
+    margin: 0 auto;
+    width: 115px;
+    height: 70px;
+    display: flex;
+  }
+}
+.err{
+  @include flex-center(unset);
+  p{
+    @include regular-font(14px, $red);
+    display: inline-block;
+    padding-left: 5px;
+  }
+}
+@media only screen and (max-width: $break-tablet){
+  .form{
+    width: 100%;
+    .form-header{
+      padding: 0 15px;
+    }
+    .form-body{
+      padding: 20px 15px;
+    }
+    .input-block{
+      display: block;
+    }
+    label{
+      padding-bottom: 5px;
+    }
+  }
+}
+@media only screen and (max-width: $break-mobile-sm){
+
 }

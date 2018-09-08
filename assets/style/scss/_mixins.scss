@@ -1,0 +1,14 @@
+@mixin flex-center($align){
+  display: flex;
+  align-items: center;
+  justify-content: $align;
+}
+@mixin regular-font($size, $color){
+  font-family: $font;
+  font-size: $size;
+  color: $color;
+}
+@mixin list(){
+  list-style: none;
+  display: block;
+}
